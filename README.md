@@ -1,50 +1,78 @@
-# React + TypeScript + Vite
+# Mnemoniac Frontend 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A flashcard application built with React.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Core Features (To be implemented)
+* Deck Management
+  - Create, edit, and delete custom flashcard decks
+  - Import/export decks in common formats (CSV, JSON)
+  - Organize decks with tags and categories
 
-## Expanding the ESLint configuration
+* Flashcard Creation
+  - Add cards with front (question) and back (answer) sides
+  - Support for rich text formatting
+  - Ability to include images and code snippets
+  - Bulk card creation from text or spreadsheet
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+* Study System
+  - Spaced repetition algorithm for optimal learning
+  - Multiple study modes (classic, quiz, timed review)
+  - Progress tracking and performance analytics
+  - Custom study schedules
 
-- Configure the top-level `parserOptions` property like this:
+## Technologies Used
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+* React
+* TypeScript (inferred from `vite.config.ts` and `package.json`)
+* Vite
+* Vitest
+* ESLint (configured in `package.json`)
+
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+* Node.js and npm installed.
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone [this repository URL]
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd flashcard-app-frontend
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## Usage
+
+[Instructions on how to use the app.  This will require examining the application code itself to determine how to use the application].
+
+## Testing
+
+The project uses Vitest for testing.  To run tests:
+
+```bash
+npm run test
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Contributing
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Contributions are welcome! Please feel free to open issues or submit pull requests.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## License
+
+This project is licensed under the [MIT License](LICENSE.txt).
