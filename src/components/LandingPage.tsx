@@ -30,12 +30,14 @@ const LandingPage: FC = () => {
   const features = [
     {
       title: 'Smart Learning',
-      description: 'Adaptive algorithms that focus on what you need to learn most',
+      description:
+        'Adaptive algorithms that focus on what you need to learn most',
       icon: <Psychology sx={{ fontSize: 48 }} />,
     },
     {
       title: 'Track Progress',
-      description: 'Detailed insights into your learning journey and improvements',
+      description:
+        'Detailed insights into your learning journey and improvements',
       icon: <Timeline sx={{ fontSize: 48 }} />,
     },
     {
@@ -53,7 +55,8 @@ const LandingPage: FC = () => {
     },
     {
       title: 'Easy to Use',
-      description: 'Intuitive interface designed for seamless learning experience',
+      description:
+        'Intuitive interface designed for seamless learning experience',
       icon: <TouchApp sx={{ fontSize: 56 }} />,
     },
     {
@@ -86,18 +89,18 @@ const LandingPage: FC = () => {
           >
             Master Any Subject with Mnemoniac
           </Typography>
-          <Typography
-            variant="h5"
-            align="center"
-            sx={{ mb: 6, opacity: 0.9 }}
-          >
+          <Typography variant="h5" align="center" sx={{ mb: 6, opacity: 0.9 }}>
             The intelligent flashcard app that adapts to your learning style
           </Typography>
-          <Box display="flex" justifyContent="center">
+          <Box
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+            sx={{ width: '40%', gap: 1, m: 'auto' }}
+          >
             <Button
               variant="contained"
               size="large"
-              onClick={handleAuthOpen}
               sx={{
                 bgcolor: 'white',
                 color: 'primary.main',
@@ -110,13 +113,25 @@ const LandingPage: FC = () => {
             >
               Get Started Now
             </Button>
+            <Button
+              variant="outlined"
+              size="large"
+              onClick={handleAuthOpen}
+              color="background"
+              sx={{
+                px: 4,
+                py: 1.5,
+              }}
+            >
+              Login
+            </Button>
           </Box>
         </Container>
       </Box>
 
       {/* Auth Dialog */}
-      <Dialog 
-        open={isAuthOpen} 
+      <Dialog
+        open={isAuthOpen}
         onClose={handleAuthClose}
         maxWidth="sm"
         fullWidth
@@ -142,7 +157,9 @@ const LandingPage: FC = () => {
                 elevation={2}
               >
                 <CardContent sx={{ flexGrow: 1, textAlign: 'center', p: 4 }}>
-                  <Box sx={{ color: 'primary.main', mb: 3 }}>{feature.icon}</Box>
+                  <Box sx={{ color: 'primary.main', mb: 3 }}>
+                    {feature.icon}
+                  </Box>
                   <Typography variant="h5" component="h3" gutterBottom>
                     {feature.title}
                   </Typography>
@@ -159,12 +176,7 @@ const LandingPage: FC = () => {
       {/* Benefits Section */}
       <Box sx={{ bgcolor: 'grey.50', py: 12 }}>
         <Container>
-          <Typography
-            variant="h3"
-            align="center"
-            gutterBottom
-            sx={{ mb: 6 }}
-          >
+          <Typography variant="h3" align="center" gutterBottom sx={{ mb: 6 }}>
             Why Choose Mnemoniac?
           </Typography>
           <Grid container spacing={4}>
