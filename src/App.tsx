@@ -1,6 +1,6 @@
-import { ThemeProvider, CssBaseline } from '@mui/material'
-import LandingPage from './components/LandingPage'
-import theme from './theme'
+import { ThemeProvider, CssBaseline } from '@mui/material';
+import LandingPage from './components/LandingPage';
+import theme from './theme';
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
       <CssBaseline />
       <LandingPage />
     </ThemeProvider>
-  )
+  );
 }
 
-export default App
+export default App;

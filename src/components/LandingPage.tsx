@@ -1,14 +1,16 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import {
   Box,
   Button,
   Card,
   CardContent,
   Container,
+  Dialog,
   Grid,
   Typography,
   useTheme,
 } from '@mui/material';
+import AuthContainer from './AuthContainer';
 import {
   Psychology,
   Timeline,
@@ -20,6 +22,10 @@ import {
 
 const LandingPage: FC = () => {
   const theme = useTheme();
+  const [isAuthOpen, setIsAuthOpen] = useState(false);
+
+  const handleAuthOpen = () => setIsAuthOpen(true);
+  const handleAuthClose = () => setIsAuthOpen(false);
 
   const features = [
     {
@@ -91,6 +97,7 @@ const LandingPage: FC = () => {
             <Button
               variant="contained"
               size="large"
+              onClick={handleAuthOpen}
               sx={{
                 bgcolor: 'white',
                 color: 'primary.main',
@@ -101,11 +108,21 @@ const LandingPage: FC = () => {
                 py: 1.5,
               }}
             >
-              Get Started
+              Get Started Now
             </Button>
           </Box>
         </Container>
       </Box>
+
+      {/* Auth Dialog */}
+      <Dialog 
+        open={isAuthOpen} 
+        onClose={handleAuthClose}
+        maxWidth="sm"
+        fullWidth
+      >
+        <AuthContainer />
+      </Dialog>
 
       {/* Features Section */}
       <Container sx={{ py: 12 }}>
